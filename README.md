@@ -11,4 +11,4 @@ This project lets the user explore US Bikeshare Data collected from three major 
 bikeshare.py
 
 ### Credits
-It's important to give proper credit. Add links to any repo that inspired you or blogposts you consulted.
+I don't know if I have any credits to include. My work came from Udacity, and Stack Overflow
