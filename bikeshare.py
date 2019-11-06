@@ -56,14 +56,14 @@ def load_data(city, month, day):
         df - Pandas DataFrame containing city data filtered by month and day
     """
     df = pd.read_csv(city)
-    start_time = pd.to_datetime(df['Start Time'])             
+    start_time = pd.to_datetime(df['Start Time'])
     df['month'] = start_time.dt.strftime("%B")
     df['day'] = start_time.dt.strftime("%A")
     df['hour'] = start_time.dt.strftime("%H")
-                 
+
     if month != 'all':
       df = df[df['month'] == month.title()]
-                 
+
     if day != 'all':
       df = df[df['day'] == day.title()]
 
@@ -78,11 +78,11 @@ def time_stats(df):
 
     # TO DO: display the most common month
     common_month = df['month'].mode()[0]
-    print('The most common month for bike use was:', common_month)             
+    print('The most common month for bike use was:', common_month)
 
     # TO DO: display the most common day of week
     common_day = df['day'].mode()[0]
-    print('The most common day for bike use:', common_day)             
+    print('The most common day for bike use:', common_day)
 
     # TO DO: display the most common start hour
     mostcommonhour = int(df['hour'].mode()[0])
@@ -95,7 +95,7 @@ def time_stats(df):
     if mostcommonhour > 12:
       mostcommonhour -= 12
       print('The most common hour is: {} p.m.'.format(mostcommonhour))
-        
+
     print("\nThis took %s seconds." % (time.time() - start_time))
     print('-'*40)
 
@@ -130,7 +130,7 @@ def trip_duration_stats(df):
 
     # TO DO: display total travel time
     df['total_travel_time'] = pd.to_datetime(df['End Time']) - pd.to_datetime(df['Start Time'])
-    
+
     #TO DO: calculate total travel time
     totaltravtime = df['total_travel_time'].sum()
     print('Total bike ride time:', totaltravtime)
@@ -159,7 +159,7 @@ def user_stats(df):
       print(gender_count)
     else:
         print('There is no gender information for Washington')
-    
+
     # TO DO: Display earliest, most recent, and most common year of birth
     if 'Birth Year' in df:
       early_year = df['Birth Year'].min()
@@ -193,15 +193,17 @@ def main():
             else:
                 raw_data = input('\nWould you care to see five more rows of data?\n'
                                  'Please enter yes or no.\n')
-                
+
             if raw_data.lower() == 'no':
                 break
             elif raw_data.lower() == 'yes':
                 print(df.iloc[start:start+5])
                 start += 5
             else:
-                print('That is not a valid choice, please type yes or no')
-                
+                user_input = input('That is not a valid choice, please type yes or no')
+
+                #print('That is not a valid choice, please type yes or no')
+
         restart = input('\nWould you like to restart? Enter yes or no. If you choose no, the program will end.\n')
         if restart.lower() != 'yes':
             break
