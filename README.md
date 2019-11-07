@@ -5,7 +5,7 @@
 US Bikeshare Data
 
 ### Description
-This project allows users to explore US Bikeshare data from three major cities in the United States
+This project allows users to explore US Bike share data from three major cities in the United States
 
 ### Files used
 bikeshare.py
