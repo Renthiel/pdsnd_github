@@ -200,7 +200,9 @@ def main():
                 print(df.iloc[start:start+5])
                 start += 5
             else:
-                print('That is not a valid choice, please type yes or no')
+                user_input = input('That is not a valid choice, please type yes or no')
+
+                #print('That is not a valid choice, please type yes or no')
 
         restart = input('\nWould you like to restart? Enter yes or no. If you choose no, the program will end.\n')
         if restart.lower() != 'yes':
