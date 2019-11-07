@@ -5,10 +5,10 @@
 bikeshare
 
 ### Description
-This project lets the user explore US Bikeshare Data collected from three major cities in the United States.
+This project lets the user explore US Bike share Data collected from three major cities in the United States.
 
 ### Files used
 bikeshare.py
 
 ### Credits
-I don't know if I have any credits to include. My work came from Udacity, and Stack Overflow
+My work came from Udacity, and Stack Overflow
